@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Rohan's Full Stack Developer Portfolio showcasing projects, shop, to-do, and contact form.">
+  <title>Rohan's Interactive Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Rohan's World</h1>
+    <nav>
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('about')">About</button>
+      <button onclick="showSection('projects')">Projects</button>
+      <button onclick="showSection('contact')">Contact</button>
+      <button onclick="showSection('todo')">To-Do</button>
+      <button onclick="showSection('shop')">Shop</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section active">
+      <h2>Hello, I'm Rohan</h2>
+      <p>I am a creative Full Stack Web Developer with a passion for building fun, useful, and responsive web applications!</p>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I'm passionate about turning ideas into reality using HTML, CSS, JavaScript, and modern web technologies.</p>
+      <ul>
+        <li> HTML, CSS, JavaScript</li>
+        <li>Networking</li>
+        <li> Python</li>
+        <li> Git & GitHub</li>
+        <li>SQL</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>My Projects</h2>
+      <div class="card-grid">
+        <div class="card"><a href="#" target="_blank">Portfolio Website</a></div>
+        <div class="card"><a href="#" target="_blank">Quiz App</a></div>
+        <div class="card"><a href="#" target="_blank">Contact Page with Validation</a></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="confirmation" class="hidden">Thanks! I'll be in touch soon.</p>
+    </section>
+
+    <section id="todo" class="section">
+      <h2>To-Do List</h2>
+      <div class="todo-box">
+        <input type="text" id="taskInput" placeholder="New task...">
+        <input type="date" id="dueDate">
+        <button onclick="addTask()">Add</button>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+
+    <section id="shop" class="section">
+      <h2>My Shop</h2>
+      <div class="filters">
+        <select id="categoryFilter" onchange="filterProducts()">
+          <option value="all">All</option>
+          <option value="tech">Tech</option>
+          <option value="books">Books</option>
+        </select>
+        <select id="sortOption" onchange="sortProducts()">
+          <option value="default">Sort By</option>
+          <option value="priceLow">Price: Low to High</option>
+          <option value="priceHigh">Price: High to Low</option>
+          <option value="rating">Rating</option>
+        </select>
+      </div>
+      <div id="productList" class="product-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rohan Panday. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
